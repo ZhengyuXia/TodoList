@@ -1,13 +1,19 @@
-const TodoItem = ({ content, isCompleted, index, delTodo, modTodo }) => {
+import { useDispatch } from "react-redux";
+import { delTodo, modTodo } from "../actions";
+import "../styles/todo-items.css";
+
+const TodoItem = ({ content, isCompleted, index }) => {
+  const dispatch = useDispatch();
+
   return (
-    <li>
+    <li className="todo-item">
       <span
-        style={{ textDecoration: isCompleted ? "line-through" : "none" }}
-        onDoubleClick={() => modTodo(index)}
+        className={isCompleted ? "is-completed" : "is-not-completed"}
+        onDoubleClick={() => modTodo(dispatch)(index)}
       >
         {content}
       </span>
-      <button onClick={() => delTodo(index)}>delete</button>
+      <button onClick={() => delTodo(dispatch)(index)}>delete</button>
     </li>
   );
 };
