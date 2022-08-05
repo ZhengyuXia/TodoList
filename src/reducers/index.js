@@ -1,5 +1,7 @@
 export const reducer = (state = [], { type, payload }) => {
   switch (type) {
+    case "INIT":
+      return [...payload];
     case "ADD":
       return [...state, { ...payload }];
 

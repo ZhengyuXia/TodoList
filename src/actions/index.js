@@ -1,5 +1,19 @@
 import { todoApi } from "../api";
 
+export const initTodos = (dispatch) => async () => {
+  try {
+    const result = await todoApi.getAllTodos();
+    console.log(result);
+    dispatch({
+      type: "INIT",
+      payload: [...result],
+    });
+  } catch (e) {
+    // erro handling code here
+    console.log(e);
+  }
+};
+
 export const addTodo = (dispatch) => async (content) => {
   try {
     const result = await todoApi.addTodo({ content, isCompleted: false });

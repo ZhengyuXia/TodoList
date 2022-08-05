@@ -37,8 +37,11 @@ const InputTodo = () => {
         tyep="text"
         value={inputTodoValue}
         onChange={(e) => setInputTodoValue(e.target.value)}
+        placeholder="Input your todo"
       />
-      <button onClick={() => handelOnAddTodo()}>+</button>
+      <button onClick={() => handelOnAddTodo()} data-testid="add-todo-btn">
+        +
+      </button>
     </div>
   );
 };
