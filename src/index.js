@@ -4,9 +4,10 @@ import "./index.css";
 // Your App is impored here
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// Import Provider
+// Import Provider, wrap your add, 提供application
+// all of your compoenents wirtten inside Prover can access global states or reducx store
 import { Provider } from "react-redux";
-// Import store
+// Import store, the global states
 import { store } from "./store/index";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

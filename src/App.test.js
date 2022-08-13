@@ -15,6 +15,9 @@ import App from "./App";
 
 // more test properties can find in testing-library online
 
+// check coverage
+// npm run test -- --coverage --watchAll=false
+
 describe("With React Testing Library", () => {
   const mockStore = configureStore();
   let store;
