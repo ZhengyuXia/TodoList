@@ -8,6 +8,9 @@ import { ajaxConfighelper } from "../helper";
 
 // the following URL is not needed in this case
 // const baseURL = "localhost:3002"
+// we need to chnage proxy, which should be added to package.json
+// front-end 3000
+// back-end 3002
 
 // get method
 export const initTodos = (dispatch) => async () => {
